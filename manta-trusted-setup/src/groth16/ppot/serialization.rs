@@ -575,6 +575,7 @@ pub fn read_g1_powers<S>(
 where
     S: Size,
 {
+    println!("element: {:?}", element);
     let size = element.num_powers::<S>();
     let mut powers = Vec::new();
     let mut start_position = calculate_mmap_position(0, element, compression);
@@ -597,6 +598,7 @@ where
             };
             // point will be checked below
             powers.push(point);
+            println!("{point}");
         } else {
             return Err(PointDeserializeError::WrongCurve);
         }
@@ -628,6 +630,7 @@ pub fn read_g2_powers<S>(
 where
     S: Size,
 {
+    println!("element: {:?}", element);
     let size = element.num_powers::<S>();
     let mut powers = Vec::new();
     let mut start_position = calculate_mmap_position(0, element, compression);
@@ -650,6 +653,7 @@ where
             };
             // point will be checked below
             powers.push(point);
+            println!("{point}");
         } else {
             return Err(PointDeserializeError::WrongCurve);
         }
